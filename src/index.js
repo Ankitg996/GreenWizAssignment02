@@ -19,7 +19,7 @@ app.get("/getImage", async(req, res)=>{
         for (let i = 0; i < files.length; i++) {
 
             const fileName = path.basename(files[i].src) || Date.now();
-// console.log(process.cwd());
+            
             const file = fs.createWriteStream(process.cwd() + '/files/' + fileName);
 
             https.get(files[i].src, function (response) {
